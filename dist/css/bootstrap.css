@@ -1079,8 +1079,13 @@ th {
 }
 html {
   font-size: 10px;
+  zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OTJBQkFGRUZFOTIyMTFFMEJDRDNEQzkxOTVGOTNBODAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OTJBQkFGRjBFOTIyMTFFMEJDRDNEQzkxOTVGOTNBODAiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5MkFCQUZFREU5MjIxMUUwQkNEM0RDOTE5NUY5M0E4MCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5MkFCQUZFRUU5MjIxMUUwQkNEM0RDOTE5NUY5M0E4MCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PtrV+I8AAAAQSURBVHjaYvj//z8DQIABAAj8Av7bok0WAAAAAElFTkSuQmCC', sizingMethod=crop);
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+          font-smoothing: antialiased;
 }
 body {
   font-family: "Nanum Barun Gothic", "NanumBarunGothic", "Source Sans Pro", Apple SD Gothic Neo, Nanum Gothic, "돋움", Dotum, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -2654,7 +2659,6 @@ fieldset[disabled] .checkbox label {
   height: 32px;
   padding: 7px 10px;
   font-size: 14px;
-  line-height: 1.5;
   border-radius: 2px;
 }
 select.input-sm {
@@ -2691,7 +2695,6 @@ select[multiple].input-sm {
   height: 48px;
   padding: 15px 24px;
   font-size: 14px;
-  line-height: 1.3333333;
   border-radius: 2px;
 }
 select.input-lg {
@@ -2952,7 +2955,7 @@ select[multiple].input-lg {
   padding: 0 20px;
   margin-bottom: 0;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: normal;
   line-height: 40px;
   text-align: center;
   white-space: nowrap;
@@ -3807,6 +3810,8 @@ tbody.collapse.in {
   position: relative;
   display: inline-block;
   vertical-align: middle;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(206, 211, 218, .32);
+          box-shadow: 0 1px 1px 0 rgba(206, 211, 218, .32);
 }
 .btn-group > .btn,
 .btn-group-vertical > .btn {
@@ -3999,7 +4004,6 @@ tbody.collapse.in {
   height: 48px;
   padding: 15px 24px;
   font-size: 14px;
-  line-height: 1.3333333;
   border-radius: 2px;
 }
 select.input-group-lg > .form-control,
@@ -4022,7 +4026,6 @@ select[multiple].input-group-lg > .input-group-btn > .btn {
   height: 32px;
   padding: 7px 10px;
   font-size: 14px;
-  line-height: 1.5;
   border-radius: 2px;
 }
 select.input-group-sm > .form-control,
@@ -4081,12 +4084,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-top: 0;
 }
 .input-group .form-control:first-child,
-.input-group-addon:first-child,
-.input-group-btn:first-child > .btn,
-.input-group-btn:first-child > .btn-group > .btn,
-.input-group-btn:first-child > .dropdown-toggle,
-.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+.input-group-addon:first-child {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -4094,12 +4092,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-right: 0;
 }
 .input-group .form-control:last-child,
-.input-group-addon:last-child,
-.input-group-btn:last-child > .btn,
-.input-group-btn:last-child > .btn-group > .btn,
-.input-group-btn:last-child > .dropdown-toggle,
-.input-group-btn:first-child > .btn:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+.input-group-addon:last-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -4124,12 +4117,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > .btn-group {
-  margin-right: -1px;
+  margin-right: 4px;
 }
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .btn-group {
   z-index: 2;
-  margin-left: -1px;
+  margin-left: 4px;
 }
 .nav {
   padding-left: 0;

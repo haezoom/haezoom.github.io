@@ -2624,6 +2624,47 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
+
+<h2 id="forms-input-icon">Icon</h2>
+<p>input control 좌측, 혹은 우측에 아이콘을 표시합니다. <code>.input-icon-group</code> 내부에 <code>.input-icon</code> 를 오른쪽에 위치시킵니다. <code>.input-icon-group.input-icon-group-left</code> 사용 시 아이콘이 왼쪽에 위치합니다.</p>
+
+<div class="bs-example" data-example-id="form-control-column-sizing">
+  <form>
+    <div class="form-group">
+      <div class="input-icon-group">
+        <input type="text" class="form-control" value="테스트값입니다 아이콘은 오른쪽에 위치합니다.
+        테스트값입니다 아이콘은 오른쪽에 위치합니다.테스트값입니다 아이콘은 오른쪽에 위치합니다.
+        테스트값입니다 아이콘은 오른쪽에 위치합니다.테스트값입니다 아이콘은 오른쪽에 위치합니다.">
+        <a href="#" class="input-icon" src="" alt=""><img src="" alt="" style="width:24px;height:24px;margin:0;padding:0;"></a>
+      </div>
+      <br>
+      <div class="input-icon-group input-icon-group-left">
+        <input type="text" class="form-control" value="테스트값입니다 아이콘은 왼쪽에 위치합니다.
+        테스트값입니다 아이콘은 왼쪽에 위치합니다. 테스트값입니다 아이콘은 왼쪽에 위치합니다.
+        테스트값입니다 아이콘은 왼쪽에 위치합니다. 테스트값입니다 아이콘은 왼쪽에 위치합니다.">
+        <a href="#" class="input-icon" src="" alt=""><img src="" alt="" style="width:24px;height:24px;margin:0;padding:0;"></a>
+      </div>
+    </div>
+  </form>
+</div><!-- /.bs-example -->
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-icon-group"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">value=</span><span class="s">"테스트값입니다 아이콘은 오른쪽에 위치합니다.
+      테스트값입니다 아이콘은 오른쪽에 위치합니다.테스트값입니다 아이콘은 오른쪽에 위치합니다.
+      테스트값입니다 아이콘은 오른쪽에 위치합니다.테스트값입니다 아이콘은 오른쪽에 위치합니다."</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"input-icon"</span> <span class="na">src=</span><span class="s">""</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">""</span> <span class="na">alt=</span><span class="s">""</span> <span class="na">style=</span><span class="s">"width:24px;height:24px;margin:0;padding:0;"</span><span class="nt">&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;br&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-icon-group input-icon-group-left"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">value=</span><span class="s">"테스트값입니다 아이콘은 왼쪽에 위치합니다.
+      테스트값입니다 아이콘은 왼쪽에 위치합니다. 테스트값입니다 아이콘은 왼쪽에 위치합니다.
+      테스트값입니다 아이콘은 왼쪽에 위치합니다. 테스트값입니다 아이콘은 왼쪽에 위치합니다."</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"input-icon"</span> <span class="na">src=</span><span class="s">""</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">""</span> <span class="na">alt=</span><span class="s">""</span> <span class="na">style=</span><span class="s">"width:24px;height:24px;margin:0;padding:0;"</span><span class="nt">&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
+
 <div class="bs-docs-section">
   <h1 id="buttons" class="page-header">Buttons</h1>
 
@@ -3972,7 +4013,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   </ul>
 </li>
 <li>
-  <a href="#forms"><span class="label label-primary">Haezoom</span> Forms</a>
+  <a href="#forms"><span class="label label-primary">Haezoom</span> <span class="label label label-success">New</span> Forms</a>
   <ul class="nav">
     <li><a href="#forms-example">Basic example</a></li>
     <li><a href="#forms-inline">Inline form</a></li>
@@ -3985,6 +4026,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
     <li><a href="#forms-help-text">Help text</a></li>
     <li><a href="#forms-control-validation">Validation states</a></li>
     <li><a href="#forms-control-sizes">Control sizing</a></li>
+    <li><a href="#forms-input-icon"><span class="label label label-success">New</span>Icon</a></li>
   </ul>
 </li>
 <li>

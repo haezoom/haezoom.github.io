@@ -4264,3 +4264,66 @@ if (typeof jQuery === 'undefined') {
 
 
 }));
+
++(function($) {
+  "use strict";
+
+  var ie = (function(){
+    var undef,
+        v = 3,
+        div = document.createElement('div'),
+        all = div.getElementsByTagName('i');
+    while (
+        div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
+        all[0]
+    );
+    return v > 4 ? v : undef;
+  }());
+  /* ie 9 아랫버전이라면... */
+  if (!(ie < 9)){
+    return false;
+  };
+  var CHECKED_CLASS = 'poly-checked',
+      JUST_CHANGED_PARENT_CLASS = 'poly-just-changed',
+      PATCHED_DATA_PROP = 'isPolyChecked',
+      inputsLiveNodeList = document.getElementsByTagName('input');
+
+  function patchStylesheet(elem, text) {
+      elem.styleSheet.cssText = text.replace(/:checked/g, '.' + CHECKED_CLASS);
+  }
+  $('style').each(function() {
+      patchStylesheet(this, this.innerHTML);
+  });
+
+  $('link[rel=stylesheet]').each(function() {
+      var elem = this;
+      $.get(this.href, function(rawCSSText) {
+          patchStylesheet(elem, rawCSSText);
+      });
+  });
+  function refreshStyling(elem) {
+      $(elem).toggleClass(CHECKED_CLASS, elem.checked)
+          .parent().addClass(JUST_CHANGED_PARENT_CLASS).removeClass(JUST_CHANGED_PARENT_CLASS);
+  }
+  function patchInput(elem) {
+      if (elem.checked) refreshStyling(elem);
+      $(elem).on('propertychange._polychecked', function(e) {
+          if (e.originalEvent.propertyName === 'checked') {
+              refreshStyling(this);
+          }
+      }).data(PATCHED_DATA_PROP, 1);
+  }
+  function patchNonPatchedInputs() {
+      for (var i = 0; i < inputsLiveNodeList.length; i++) {
+          var input = inputsLiveNodeList[i];
+          if ((input.type === 'checkbox' || input.type === 'radio') && !$.data(input, PATCHED_DATA_PROP)) {
+              patchInput(input);
+          }
+      }
+  }
+  $(function() {
+      patchNonPatchedInputs();
+      setInterval(patchNonPatchedInputs, 200);
+  });
+
+}(jQuery));

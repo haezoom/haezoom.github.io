@@ -4327,3 +4327,61 @@ if (typeof jQuery === 'undefined') {
   });
 
 }(jQuery));
+
+/*
+snackbar js
+*/
+
++function ($) {
+  'use strict';
+
+  /*
+  params
+  btnHandler: 실행취소 버튼 callback */
+
+  $.fn.snackbar = function (btnHandler) {
+    var snackbarActive = function () {
+      var that = $(this)[0];
+      // 실행취소 버튼 callback
+      $(this).find('.close').click(function (e) {
+        btnHandler && btnHandler.apply(that);
+        $(that).remove();
+        e.preventDefault();
+      });
+      function loop(snackbar) {
+        var contentWrap = $(snackbar).find('.content-wrap');
+        var content = $(snackbar).find('.content-wrap>span');
+        $(content).css('margin-left', '0px');
+        var offset = content.width() - contentWrap.width();
+        if (offset > 0) {
+          $(content).animate({ 'margin-left': -offset }, 8000, function () {
+            setTimeout(function () {
+              $(content).animate({ 'margin-left': 0 }, 500, function () {
+                loop(snackbar);
+              });
+            }, 2000);
+          });
+        }
+      }
+      loop(this);
+    };
+    // 새로 추가하는 snackbar 와, 기존의 snackbar 구분
+    if ($(this).is('.snackbar')) {
+      snackbarActive.apply(this);
+    }else {
+      $('.snackbar').each(snackbarActive);
+    }
+  };
+  // snackbar init
+  $.fn.snackbar();
+
+  // dynamic add example
+  // $('#abab').click(function(){
+  //     var snackbar = $('<div class="snackbar"><a class="sub"><span class="close">실행취소</span></a><div class="content"><p class="content-wrap"><span>  a a a a a a  a a a a a a a a a a a a a a a a a a  a a a a a a a a a a a a a a a a a a  a a a a a a a a a a a a* * *</span></p></div></div>');
+  //     $('body').append(snackbar);
+  //     $(snackbar).snackbar(function(){
+  //         // close callback
+  //         console.log(1);
+  //     });
+  // });
+}(jQuery);

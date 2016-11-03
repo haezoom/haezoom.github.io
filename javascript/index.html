@@ -182,6 +182,121 @@
 </div>
 
 <div class="bs-docs-section">
+  <h1 id="input-checked" class="page-header">Input checked</h1>
+  <p><code>input[type="checkbox"]</code>, <code>input[type="radio"]</code>  의 custom style.
+    IE8 의 경우 <code>poly-checked.js</code>코드가 동작하여 <code>:checked</code> selector 를 사용가능. 단, <code>&lt;style&gt;&lt;/style&gt;</code>인라인 테그로 작성된 것들은 동작하지 않음.</p>
+  <h2 id="input-checked-basic" class="page-header">Examples</h2>
+  <div class="bs-example">
+      <div class="form-group">
+          <label class="input-checked">
+              <input type="checkbox">
+              <div class="input-checked-icon">
+                  <span src="a" alt="" class="checked"></span>
+                  <span src="a" alt="" class="unchecked"></span>
+              </div>
+              <span>이것은 체크박스 입니다.</span>
+          </label>
+
+          <label class="input-checked">
+              <input type="checkbox" checked>
+              <div class="input-checked-icon">
+                  <span src="a" alt="" class="checked"></span>
+                  <span src="a" alt="" class="unchecked"></span>
+              </div>
+              <span>이것은 체크박스 입니다.</span>
+          </label>
+      </div>
+
+      <div class="form-group">
+          <label class="input-checked">
+              <input type="radio" name="radio-example">
+              <div class="input-checked-icon">
+                  <span src="a" alt="" class="checked"></span>
+                  <span src="a" alt="" class="unchecked"></span>
+              </div>
+              <span>이것은 라디오버튼 입니다.</span>
+          </label>
+
+          <label class="input-checked">
+              <input type="radio" name="radio-example" checked>
+              <div class="input-checked-icon">
+                  <span src="a" alt="" class="checked"></span>
+                  <span src="a" alt="" class="unchecked"></span>
+              </div>
+              <span>이것은 라디오버튼 입니다.</span>
+          </label>
+      </div>
+  </div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"input-checked"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-checked-icon"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">src=</span><span class="s">"a"</span> <span class="na">alt=</span><span class="s">""</span> <span class="na">class=</span><span class="s">"checked"</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">src=</span><span class="s">"a"</span> <span class="na">alt=</span><span class="s">""</span> <span class="na">class=</span><span class="s">"unchecked"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;span&gt;</span>이것은 체크박스 입니다.<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"input-checked"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">checked</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-checked-icon"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">src=</span><span class="s">"a"</span> <span class="na">alt=</span><span class="s">""</span> <span class="na">class=</span><span class="s">"checked"</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">src=</span><span class="s">"a"</span> <span class="na">alt=</span><span class="s">""</span> <span class="na">class=</span><span class="s">"unchecked"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;span&gt;</span>이것은 체크박스 입니다.<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/label&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"> <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"input-checked"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"radio-example"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-checked-icon"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;span</span> <span class="na">src=</span><span class="s">"a"</span> <span class="na">alt=</span><span class="s">""</span> <span class="na">class=</span><span class="s">"checked"</span><span class="nt">&gt;&lt;/span&gt;</span>
+         <span class="nt">&lt;span</span> <span class="na">src=</span><span class="s">"a"</span> <span class="na">alt=</span><span class="s">""</span> <span class="na">class=</span><span class="s">"unchecked"</span><span class="nt">&gt;&lt;/span&gt;</span>
+     <span class="nt">&lt;/div&gt;</span>
+     <span class="nt">&lt;span&gt;</span>이것은 라디오버튼 입니다.<span class="nt">&lt;/span&gt;</span>
+ <span class="nt">&lt;/label&gt;</span>
+ <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"input-checked"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"radio-example"</span> <span class="na">checked</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-checked-icon"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;span</span> <span class="na">src=</span><span class="s">"a"</span> <span class="na">alt=</span><span class="s">""</span> <span class="na">class=</span><span class="s">"checked"</span><span class="nt">&gt;&lt;/span&gt;</span>
+         <span class="nt">&lt;span</span> <span class="na">src=</span><span class="s">"a"</span> <span class="na">alt=</span><span class="s">""</span> <span class="na">class=</span><span class="s">"unchecked"</span><span class="nt">&gt;&lt;/span&gt;</span>
+     <span class="nt">&lt;/div&gt;</span>
+     <span class="nt">&lt;span&gt;</span>이것은 라디오버튼 입니다.<span class="nt">&lt;/span&gt;</span>
+ <span class="nt">&lt;/label&gt;</span></code></pre></figure>
+</div>
+
+<div class="bs-docs-section">
+  <h1 id="snackbar" class="page-header">Snackbar</h1>
+  <p>특정 동작 이후에 보여주는 snackbar 입니다. </p>
+
+  <h2 id="#snackbar-example">Example</h2>
+
+  <div class="bs-example" data-example-id="#snackbar-example">
+   <div class="snackbar">
+       <a href="#" class="sub"><span class="close">실행취소</span></a>
+       <div class="content">
+          <p class="content-wrap"><span>  a a a a a a  a a a a a a a a a a a a  a a a a a a  a a a a a a a a a a a a  a a a a a a  a a a a a a a a a a a a  a a a a a a  a a a a a a a a a a a a * * *</span></p>
+       </div>
+   </div>
+  </div>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"snackbar"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"sub"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"close"</span><span class="nt">&gt;</span>실행취소<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"content-wrap"</span><span class="nt">&gt;&lt;span&gt;</span> ...<span class="nt">&lt;/span&gt;&lt;/p&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+<p>페이지가 로드된 이후에, 동적으로 넣을 때는 아래 처럼 사용한다.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// dynamic add example</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#abab'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+   <span class="kd">var</span> <span class="nx">snackbar</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'&lt;div class="snackbar"&gt;&lt;a class="sub"&gt;&lt;span class="close"&gt;실행취소&lt;/span&gt;&lt;/a&gt;&lt;div class="content"&gt;&lt;p class="content-wrap"&gt;&lt;span&gt;  ... &lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;'</span><span class="p">);</span>
+   <span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">snackbar</span><span class="p">);</span>
+   <span class="nx">$</span><span class="p">(</span><span class="nx">snackbar</span><span class="p">).</span><span class="nx">snackbar</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+       <span class="c1">// close callback</span>
+       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'여기에 실행취소버튼 콜백'</span><span class="p">);</span>
+   <span class="p">});</span>
+<span class="p">});</span></code></pre></figure>
+
+</div>
+
+<div class="bs-docs-section">
   <h1 id="transitions" class="page-header">Transitions <small>transition.js</small></h1>
 
   <h2>About transitions</h2>
@@ -2593,6 +2708,19 @@ sagittis lacus vel augue laoreet rutrum faucibus."</span><span class="nt">&gt;</
     <li><a href="#js-version-nums">Version numbers</a></li>
     <li><a href="#js-disabled">When JavaScript is disabled</a></li>
     <li><a href="#callout-third-party-libs">Third-party libraries</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#input-checked"><span class="label label label-success">New</span> Input checked</a>
+  <ul class="nav">
+    <li><a href="#input-checked-basic">Basic example</a></li>
+    <li><a href="#input-checked-sizing">Sizing</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#snackbar"><span class="label label label-success">New</span> Snackbar</a>
+  <ul class="nav">
+    <li><a href="#snackbar-example">Example</a></li>
   </ul>
 </li>
 <li><a href="#transitions">Transitions</a></li>

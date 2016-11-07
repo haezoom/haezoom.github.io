@@ -4385,3 +4385,33 @@ snackbar js
   //     });
   // });
 }(jQuery);
+
+/*
+menu js
+animation 은 아직. 코딩할 수 있는 위치는 만들어 놓았으나 비워둠.
+*/
+
++function ($) {
+  'use strict';
+
+  $(document).on('click', '.menu>li>a', function (e) {
+    var $that = $(this);
+    var $list = $that.closest('.menu');
+    // if sub list open
+    if ($that.has('.status-arrow').length > 0) {
+      $that.closest('li').toggleClass('open');
+      e.preventDefault();
+      return false;
+    }else {
+      // if sub list item
+      if ($list.hasClass('menu-sub')) {
+        // find root menu
+        while ($list.hasClass('menu-sub')) {
+          $list = $list.closest('.menu:not(.menu-sub)');
+        }
+      }
+      $list.find('.active').removeClass('active');
+      $that.addClass('active');
+    }
+  });
+}(jQuery);

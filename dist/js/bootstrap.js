@@ -4348,6 +4348,7 @@ snackbar js
         $(that).remove();
         e.preventDefault();
       });
+
       function loop(snackbar) {
         var contentWrap = $(snackbar).find('.content-wrap');
         var content = $(snackbar).find('.content-wrap>span');
@@ -4363,7 +4364,10 @@ snackbar js
           });
         }
       }
-      loop(this);
+
+      if ($(that).hasClass('snackbar-fluid')) {
+        loop(this);
+      }
     };
     // 새로 추가하는 snackbar 와, 기존의 snackbar 구분
     if ($(this).is('.snackbar')) {

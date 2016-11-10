@@ -31,6 +31,11 @@
 <link href="../assets/css/src/pygments-manni.css" rel="stylesheet">
 <link href="../assets/css/src/docs.css" rel="stylesheet">
 
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')</script>
+ 
 <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 <script src="../assets/js/ie-emulation-modes-warning.js"></script>
 
@@ -1710,6 +1715,10 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <h1 id="forms" class="page-header">Forms</h1>
 
   <h2 id="forms-example">Basic example</h2>
+  <div class="bs-callout bs-callout-info" id="callout-helper-context-color-specificity">
+    <h4>Haezoom Bootstrap 에는 ...</h4>
+    <p><code>Jquery-validate.js</code>가 내장되어있습니다. <a href="/javascript/?password=#jquery-validate">/javascript/?password=#jquery-validate</a> 에서 확인하세요!</p>
+  </div>
   <p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>
   <div class="bs-example" data-example-id="basic-forms">
     <form>
@@ -4260,9 +4269,6 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')</script>
 
 
   <script src="../dist/js/bootstrap.js"></script>

@@ -31,6 +31,11 @@
 <link href="../assets/css/src/pygments-manni.css" rel="stylesheet">
 <link href="../assets/css/src/docs.css" rel="stylesheet">
 
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')</script>
+ 
 <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 <script src="../assets/js/ie-emulation-modes-warning.js"></script>
 
@@ -2791,6 +2796,220 @@ sagittis lacus vel augue laoreet rutrum faucibus."</span><span class="nt">&gt;</
   </div><!-- /.table-responsive -->
 </div>
 
+<div class="bs-docs-section">
+  <h1 id="jquery-validate" class="page-header">jquery-validate</h1>
+  <p>Haezoom Bootstrap 에는 jquery-validate.js 가 포함되어있습니다.</p>
+
+  <h2 id="#jquery-validate-example">Example</h2>
+
+  <div class="bs-example" data-example-id="#jquery-validate-example">
+    <form class="cmxform" id="commentForm" method="get" action="">
+      <div class="form-group">
+        <label for="exampleInputEmail1">이름</label>
+        <input id="cname" name="name" minlength="2" type="text" class="form-control" placeholder="홍길동" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">이메일</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="admin@haezoom.com" required>
+      </div>
+      <div class="form-group">
+        <label class="input-checked">
+            <input type="checkbox" id="agree" name="agree" required>
+            <div class="input-checked-icon">
+                <span class="checked"></span>
+                <span class="unchecked"></span>
+            </div>
+            <span>이것은 체크박스 입니다.</span>
+        </label>
+        <!-- error message 위치 -->
+        <label id="agree-error" class="has-error" for="agree" style="display:none;">Please enter your agree</label>
+      </div>
+      <div class="form-group">
+        <label class="input-checked">
+          <input type="radio" name="selection" required>
+          <div class="input-checked-icon">
+            <span class="checked"></span>
+            <span class="unchecked"></span>
+          </div>
+          <span>이것은 라디오버튼 입니다.</span>
+        </label>
+
+        <label class="input-checked">
+          <input type="radio" name="selection" required>
+          <div class="input-checked-icon">
+              <span class="checked"></span>
+              <span class="unchecked"></span>
+          </div>
+          <span>이것은 라디오버튼 입니다.</span>
+        </label>
+        <!-- error message 위치 -->
+        <label class="has-error" for="selection" style="display:none;">Please enter your selection</label>
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  <script>
+    $(function () {
+		  $("#commentForm").validate();
+    });
+  </script>
+
+  </div>
+<p><code>input-checked</code> 의 경우, error 메세지를 표시하는 테그 <code>label.error[style="display:none;"]</code> 을 원하는 위치에 배치시킵니다.</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"cmxform"</span> <span class="na">id=</span><span class="s">"commentForm"</span> <span class="na">method=</span><span class="s">"get"</span> <span class="na">action=</span><span class="s">""</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputEmail1"</span><span class="nt">&gt;</span>이름<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"cname"</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">minlength=</span><span class="s">"2"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"홍길동"</span> <span class="na">required</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputEmail1"</span><span class="nt">&gt;</span>이메일<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleInputEmail1"</span> <span class="na">placeholder=</span><span class="s">"admin@haezoom.com"</span> <span class="na">required</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"input-checked"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"agree"</span> <span class="na">name=</span><span class="s">"agree"</span> <span class="na">required</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-checked-icon"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"checked"</span><span class="nt">&gt;&lt;/span&gt;</span>
+              <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"unchecked"</span><span class="nt">&gt;&lt;/span&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;span&gt;</span>이것은 체크박스 입니다.<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;/label&gt;</span>
+      <span class="c">&lt;!-- error message 위치 --&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">id=</span><span class="s">"agree-error"</span> <span class="na">class=</span><span class="s">"error"</span> <span class="na">for=</span><span class="s">"agree"</span> <span class="na">style=</span><span class="s">"display:none;"</span><span class="nt">&gt;</span>Please enter your agree<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"input-checked"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"selection"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-checked-icon"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"checked"</span><span class="nt">&gt;&lt;/span&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"unchecked"</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;span&gt;</span>이것은 라디오버튼 입니다.<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;/label&gt;</span>
+
+      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"input-checked"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"selection"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-checked-icon"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"checked"</span><span class="nt">&gt;&lt;/span&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"unchecked"</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;span&gt;</span>이것은 라디오버튼 입니다.<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;/label&gt;</span>
+      <span class="c">&lt;!-- error message 위치 --&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"has-error"</span> <span class="na">for=</span><span class="s">"selection"</span> <span class="na">style=</span><span class="s">"display:none;"</span><span class="nt">&gt;</span>Please enter your selection<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/form&gt;</span></code></pre></figure>
+
+<p>javascript 는 아래와 같이 사용합니다. 공식사이트:<a href="https://jqueryvalidation.org/">https://jqueryvalidation.org/</a></p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"#commentForm"</span><span class="p">).</span><span class="nx">validate</span><span class="p">();</span>
+  <span class="p">});</span></code></pre></figure>
+
+
+<a class="anchorjs-link " href="#custom-validate" aria-label="Anchor link for: custom-validate" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>
+<h2 id="custom-validate">Custom validate</h2>
+<p>validation 조건을 생성 할 수 있습니다.</p>
+
+<div class="bs-example" data-example-id="#jquery-validate-example">
+  <form id="custom-validate-form" action="">
+    <div class="form-group">
+      <label for="validate-firstname">성</label>
+      <input type="text" id="validate-firstname" name="validate-firstname" class="form-control" placeholder="성을 입력해주세요">
+    </div>
+    <div class="form-group">
+      <label for="validate-lastname">이름</label>
+      <input type="text" id="validate-lastname" name="validate-lastname" class="form-control" placeholder="이름을 입력해주세요">
+    </div>
+    <div class="form-group">
+      <label for="validate-lastname">전체이름</label>
+      <input type="text" id="validate-username" name="validate-username" class="form-control" placeholder="이름을 입력해주세요">
+    </div>
+    <div class="form-group">
+      <label for="validate-password">password</label>
+      <input type="password" id="validate-password" name="validate-password" class="form-control" placeholder="비밀번호를 입력해주세요" required>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+  <script>
+  $(function () {
+    $('#custom-validate-form').validate({
+      rules: {
+        'validate-firstname': 'required',
+				'validate-lastname': "required",
+				'validate-username': {
+					required: true,
+					minlength: 2
+				},
+				password: {
+					required: true,
+					minlength: 5
+				},
+        messages: {
+  				firstname: "Please enter your firstname",
+  				lastname: "Please enter your lastname",
+  				username: {
+  					required: "Please enter a username",
+  					minlength: "Your username must consist of at least 2 characters"
+  				},
+  				password: {
+  					required: "Please provide a password",
+  					minlength: "Your password must be at least 5 characters long"
+  				}
+  			}
+      }
+    });
+
+		// propose username by combining first- and lastname
+		$("#validate-username").focus(function() {
+			var firstname = $("#validate-firstname").val();
+			var lastname = $("#validate-lastname").val();
+			if (firstname && lastname && !this.value) {
+				this.value = firstname + "." + lastname;
+			}
+		});
+
+  });
+  </script>
+</div>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">'#custom-validate-form'</span><span class="p">).</span><span class="nx">validate</span><span class="p">({</span>
+  <span class="na">rules</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">'validate-firstname'</span><span class="p">:</span> <span class="s1">'required'</span><span class="p">,</span>
+    <span class="s1">'validate-lastname'</span><span class="p">:</span> <span class="s2">"required"</span><span class="p">,</span>
+    <span class="s1">'validate-username'</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">required</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">minlength</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="na">password</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">required</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">minlength</span><span class="p">:</span> <span class="mi">5</span>
+    <span class="p">},</span>
+    <span class="na">messages</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">firstname</span><span class="p">:</span> <span class="s2">"Please enter your firstname"</span><span class="p">,</span>
+      <span class="na">lastname</span><span class="p">:</span> <span class="s2">"Please enter your lastname"</span><span class="p">,</span>
+      <span class="na">username</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">required</span><span class="p">:</span> <span class="s2">"Please enter a username"</span><span class="p">,</span>
+        <span class="na">minlength</span><span class="p">:</span> <span class="s2">"Your username must consist of at least 2 characters"</span>
+      <span class="p">},</span>
+      <span class="na">password</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">required</span><span class="p">:</span> <span class="s2">"Please provide a password"</span><span class="p">,</span>
+        <span class="na">minlength</span><span class="p">:</span> <span class="s2">"Your password must be at least 5 characters long"</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// propose username by combining first- and lastname</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#validate-username"</span><span class="p">).</span><span class="nx">focus</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">firstname</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#validate-firstname"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">lastname</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#validate-lastname"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">firstname</span> <span class="o">&amp;&amp;</span> <span class="nx">lastname</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">firstname</span> <span class="o">+</span> <span class="s2">"."</span> <span class="o">+</span> <span class="nx">lastname</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+</div>
+
 
         </div>
         
@@ -2941,6 +3160,12 @@ sagittis lacus vel augue laoreet rutrum faucibus."</span><span class="nt">&gt;</
     <li><a href="#affix-events">Events</a></li>
   </ul>
 </li>
+<li>
+  <a href="#jquery-validate"><span class="label label label-success">New</span> Jquery Validate</a>
+  <ul class="nav">
+    <li><a href="#jquery-validate-examples">Examples</a></li>
+  </ul>
+</li>
 
               
             </ul>
@@ -2979,9 +3204,6 @@ sagittis lacus vel augue laoreet rutrum faucibus."</span><span class="nt">&gt;</
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')</script>
 
 
   <script src="../dist/js/bootstrap.js"></script>

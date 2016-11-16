@@ -2717,6 +2717,12 @@
     <p>If you are using navs to provide a navigation bar, be sure to add a <code>role="navigation"</code> to the most logical parent container of the <code>&lt;ul&gt;</code>, or wrap a <code>&lt;nav&gt;</code> element around the whole navigation. Do not add the role to the <code>&lt;ul&gt;</code> itself, as this would prevent it from being announced as an actual list by assistive technologies.</p>
   </div>
 
+  <div class="bs-callout bs-callout-info" id="">
+    <h4>Options</h4>
+    <p><code>.nav-scroll > .nav-scroll-wrapper</code></p>
+    <p><blockquote>tabs 가 많아질 경우 가로 스크롤이 되게 해주는 옵션</blockquote></p>
+  </div>
+
   <h2 id="nav-tabs">Tabs</h2>
   <p>Note the <code>.nav-tabs</code> class requires the <code>.nav</code> base class. <code>.nav-tabs-border</code>, <code>.nav-tabs-round</code> class 로 형태를 정할 수 있고 <code>nav-tabs-black</code> class 로 색상을 설정할 수 있습니다.</p>
   <div class="bs-example" data-example-id="simple-nav-tabs">
@@ -2756,6 +2762,25 @@
       <li role="presentation"><a href="#">햇빛지도</a></li>
     </ul>
     <br>
+    <p>Horizontal scroll</p>
+    <div class="nav-scroll">
+      <div class="nav-scroll-wrapper">
+          <ul class="nav nav-tabs nav-tabs-round nav-tabs-black">
+            <li role="presentation" class="active"><a href="#">가정용태양광</a></li>
+            <li role="presentation"><a href="#">공동구매</a></li>
+            <li role="presentation"><a href="#">햇빛지도</a></li>
+            <li role="presentation"><a href="#">공동구매</a></li>
+            <li role="presentation"><a href="#">햇빛지도</a></li>
+            <li role="presentation"><a href="#">공동구매</a></li>
+            <li role="presentation"><a href="#">햇빛지도</a></li>
+            <li role="presentation"><a href="#">공동구매</a></li>
+            <li role="presentation"><a href="#">햇빛지도</a></li>
+            <li role="presentation"><a href="#">공동구매</a></li>
+            <li role="presentation"><a href="#">햇빛지도</a></li>
+          </ul>
+      </div>
+    </div>
+    <br>
   </div>
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-tabs"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>가정용태양광<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
@@ -2792,7 +2817,25 @@
   <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>공동구매<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>햇빛지도<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
 <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;br&gt;</span></code></pre></figure>
+<span class="nt">&lt;br&gt;</span>
+<span class="nt">&lt;p&gt;</span>Horizontal scroll<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"nav-scroll"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"nav-scroll-wrapper"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-tabs nav-tabs-round nav-tabs-black"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>가정용태양광<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>공동구매<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>햇빛지도<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>공동구매<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>햇빛지도<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>공동구매<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>햇빛지도<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>공동구매<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>햇빛지도<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>공동구매<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>햇빛지도<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
   <h2 id="nav-pills">Pills</h2>
   <p>Take that same HTML, but use <code>.nav-pills</code> instead:</p>
   <div class="bs-example" data-example-id="simple-nav-pills">

@@ -1,0 +1,38 @@
+<div class="bs-docs-section">
+  <h1 id="snackbar" class="page-header">Snackbar</h1>
+  <p>특정 동작 이후에 보여주는 snackbar 입니다. </p>
+
+  <h2 id="#snackbar-example">Example</h2>
+
+  <div class="bs-example" data-example-id="#snackbar-example">
+   <div class="snackbar">
+       <a href="#" class="sub"><span class="close">실행취소</span></a>
+       <div class="content">
+          <p class="content-wrap"><span>  a a a a a a  a a a a a a a a a a a a  a a a a a a  a a a a a a a a a a a a  a a a a a a  a a a a a a a a a a a a  a a a a a a  a a a a a a a a a a a a * * *</span></p>
+       </div>
+   </div>
+  </div>
+
+{% highlight html %}
+<div class="snackbar">
+   <a href="#" class="sub"><span class="close">실행취소</span></a>
+   <div class="content">
+      <p class="content-wrap"><span> ...</span></p>
+   </div>
+</div>
+{% endhighlight %}
+<p>페이지가 로드된 이후에, 동적으로 넣을 때는 아래 처럼 사용한다.</p>
+
+{% highlight javascript %}
+// dynamic add example
+$('#abab').click(function(){
+   var snackbar = $('<div class="snackbar"><a class="sub"><span class="close">실행취소</span></a><div class="content"><p class="content-wrap"><span>  ... </span></p></div></div>');
+   $('body').append(snackbar);
+   $(snackbar).snackbar(function(){
+       // close callback
+       console.log('여기에 실행취소버튼 콜백');
+   });
+});
+{% endhighlight %}
+
+</div>

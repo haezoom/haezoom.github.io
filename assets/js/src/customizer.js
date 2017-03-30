@@ -111,7 +111,14 @@ window.onload = function () { // wait for load in a dumb way because B-0
       css: $('#less-section input:checked')  .map(function () { return this.value }).toArray(),
       js:  $('#plugin-section input:checked').map(function () { return this.value }).toArray()
     }
-
+		$('#useful-section input:checked').each(function () {
+			var css = $(this).attr('value');
+			var js = $(this).attr('data-js');
+			data.css = data.css || [];
+			data.css.push(css);
+			data.js.push(js);
+		});
+		
     if ($.isEmptyObject(data.vars) && !data.css.length && !data.js.length) return null
 
     return data
@@ -125,6 +132,9 @@ window.onload = function () { // wait for load in a dumb way because B-0
     }
     if (data.css) {
       $('#less-section input').each(function () {
+        $(this).prop('checked', ~$.inArray(this.value, data.css))
+      })
+      $('#useful-section input').each(function () {
         $(this).prop('checked', ~$.inArray(this.value, data.css))
       })
     }
@@ -280,7 +290,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
     var promise = $.Deferred()
     var oneChecked = false
     var lessFileIncludes = {}
-    $('#less-section input').each(function () {
+    $('#less-section input, #useful-section input').each(function () {
       var $this = $(this)
       var checked = $this.is(':checked')
       lessFileIncludes[$this.val()] = checked
@@ -337,14 +347,20 @@ window.onload = function () { // wait for load in a dumb way because B-0
   }
 
   function generateJS(preamble) {
-    var $checked = $('#plugin-section input:checked')
+    var $checked = $('#plugin-section input:checked, #useful-section input:checked')
     var jqueryCheck = __configBridge.jqueryCheck.join('\n')
     var jqueryVersionCheck = __configBridge.jqueryVersionCheck.join('\n')
 
     if (!$checked.length) return false
 
     var js = $checked
-      .map(function () { return __js[this.value] })
+      .map(function () {
+        if( $(this).is('#useful-section input:checked') ) {
+          return __js[ $(this).attr('data-js') ] 
+        } else {
+          return __js[this.value]  
+        }
+      })
       .toArray()
       .join('\n')
 
@@ -408,6 +424,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
 
   var $inputsComponent = $('#less-section input')
   var $inputsPlugin    = $('#plugin-section input')
+  var $inputsUseful    = $('#useful-section input')
   var $inputsVariables = $('#less-variables-section input')
 
   $('#less-section .toggle').on('click', function (e) {
@@ -418,6 +435,11 @@ window.onload = function () { // wait for load in a dumb way because B-0
   $('#plugin-section .toggle').on('click', function (e) {
     e.preventDefault()
     $inputsPlugin.prop('checked', !$inputsPlugin.is(':checked'))
+  })
+
+  $('#useful-section .toggle').on('click', function (e) {
+    e.preventDefault()
+    $inputsUseful.prop('checked', !$inputsUseful.is(':checked'))
   })
 
   $('#less-variables-section .toggle').on('click', function (e) {
@@ -474,7 +496,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
         generateZip(css, js, fonts, configJson, function (blob) {
           $compileBtn.removeAttr('disabled')
           setTimeout(function () {
-            saveAs(blob, 'bootstrap.zip')
+            saveAs(blob, 'haezoom-bootstrap.zip')
           }, 0)
         })
       })

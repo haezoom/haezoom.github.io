@@ -1362,7 +1362,7 @@ h1[id] {
 
 /* Downloads */
 .bs-customize-download .btn-outline {
-  padding: 20px;
+  padding: 0;
 }
 
 /* Error handling */

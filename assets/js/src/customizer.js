@@ -109,16 +109,17 @@ window.onload = function () { // wait for load in a dumb way because B-0
     var data = {
       vars: vars,
       css: $('#less-section input:checked')  .map(function () { return this.value }).toArray(),
-      js:  $('#plugin-section input:checked').map(function () { return this.value }).toArray()
+      js: $('#plugin-section input:checked').map(function () { return this.value }).toArray()
     }
-		$('#useful-section input:checked').each(function () {
-			var css = $(this).attr('value');
-			var js = $(this).attr('data-js');
-			data.css = data.css || [];
-			data.css.push(css);
-			data.js.push(js);
-		});
-		
+
+    $('#useful-section input:checked').each(function () {
+      var css = $(this).attr('value');
+      var js = $(this).attr('data-js');
+      data.css = data.css || [];
+      data.css.push(css);
+      data.js.push(js);
+    });
+
     if ($.isEmptyObject(data.vars) && !data.css.length && !data.js.length) return null
 
     return data
@@ -355,10 +356,10 @@ window.onload = function () { // wait for load in a dumb way because B-0
 
     var js = $checked
       .map(function () {
-        if( $(this).is('#useful-section input:checked') ) {
-          return __js[ $(this).attr('data-js') ] 
+        if ($(this).is('#useful-section input:checked')) {
+          return __js[ $(this).attr('data-js') ]
         } else {
-          return __js[this.value]  
+          return __js[this.value]
         }
       })
       .toArray()
